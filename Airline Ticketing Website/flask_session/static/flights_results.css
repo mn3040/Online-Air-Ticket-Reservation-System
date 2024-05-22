@@ -1,0 +1,57 @@
+/* General body styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #34495e;
+    text-align: center;
+}
+
+/* Styling for the status table */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Specific styling for different flight statuses */
+.status-on-time {
+    color: #27ae60; /* Green for on-time */
+}
+
+.status-delayed {
+    color: #e67e22; /* Orange for delayed */
+}
+
+.status-cancelled {
+    color: #c0392b; /* Red for cancelled */
+}
+
+/* Styling for no results message */
+p {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+}

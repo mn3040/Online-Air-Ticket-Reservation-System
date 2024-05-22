@@ -1,0 +1,66 @@
+/* Overall Body Styles */
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #e2e6ea;  /* Lighter background for a cleaner look */
+  color: #343a40;  /* Slightly darker text for better readability */
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Heading Style */
+h1 {
+  color: #007bff;  /* Brighter blue for a modern feel */
+  text-align: center;
+  font-size: 30px;  /* Slightly larger font size */
+  font-weight: 300;  /* Lighter font weight for a more elegant appearance */
+  margin-bottom: 30px;  /* Increase spacing for better layout separation */
+}
+
+/* List Styles */
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;  /* Center align the list */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  /* Responsive grid layout */
+  gap: 20px;  /* Spacing between grid items */
+}
+
+li {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);  /* Softer shadow */
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;  /* Smoother transition for all properties */
+  cursor: pointer;  /* Cursor changes to pointer to indicate interactivity */
+}
+
+li:hover {
+  transform: scale(1.05);  /* Slightly scale up on hover */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);  /* Deeper shadow on hover for a 'lifted' effect */
+  background-color: #f8f9fa;  /* Light background change on hover */
+}
+
+/* Link Style */
+a {
+  display: inline-block;  /* Change to inline-block for better control */
+  margin-top: 40px;  /* Spacing from the list */
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;  /* Smooth background color transition */
+  text-align: center;  /* Ensure text is centered */
+  width: 200px;  /* Fixed width for uniform appearance */
+}
+
+a:hover {
+  background-color: #0056b3;  /* Darken the button on hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+}

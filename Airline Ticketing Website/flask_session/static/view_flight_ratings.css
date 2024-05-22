@@ -1,0 +1,79 @@
+/* Updated CSS */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+}
+
+.ratings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flight {
+  background: linear-gradient(180deg, #ffffff, #f0f0f0); /* Gradient background */
+  border: 2px solid #cc0000; /* Darker red border */
+  padding: 20px; /* Increased padding */
+  margin-bottom: 20px;
+  width: 60%;
+  border-radius: 10px; /* Increased border radius for softer edges */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.flight:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+  transform: translateY(-5px); /* Lift the box slightly on hover */
+}
+
+details {
+  margin-top: 10px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  padding: 12px; /* Increased padding for better spacing */
+  border-bottom: 1px solid #eee;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+strong {
+  color: red;
+}
+
+a {
+  display: inline-block;  /* Change to inline-block for better control */
+  margin-top: 40px;  /* Spacing from the list */
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: red;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;  /* Smooth background color transition */
+  text-align: center;  /* Ensure text is centered */
+  width: 200px;  /* Fixed width for uniform appearance */
+}
+
+a:hover {
+  background-color: darkred;  /* Darken the button on hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+}

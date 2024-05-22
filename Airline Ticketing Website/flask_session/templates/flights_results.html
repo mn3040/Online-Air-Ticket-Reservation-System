@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flight Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='flights_results.css') }}">
+</head>
+<body>
+    <h1>Flight Results</h1>
+    {% if outbound_flights %}
+        <h2>Outbound Flights</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Departure Airport</th>
+                    <th>Arrival Airport</th>
+                    <th>Departure Date</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Date</th>
+                    <th>Arrival Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in outbound_flights %}
+                <tr>
+                    <td>{{ flight['flight_number'] }}</td>
+                    <td>{{ flight['departure_airport'] }}</td>
+                    <td>{{ flight['arrival_airport'] }}</td>
+                    <td>{{ flight['departure_date'] }}</td>
+                    <td>{{ flight['departure_time']}}</td>
+                    <td>{{ flight['arrival_date'] }}</td>
+                    <td>{{ flight['arrival_time'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    {% if return_flights %}
+        <h2>Return Flights</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Departure Airport</th>
+                    <th>Arrival Airport</th>
+                    <th>Departure Date</th>
+                    <th>Departure Time</th>
+                    <th>Arrival Date</th>
+                    <th>Arrival Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in return_flights %}
+                <tr>
+                    <td>{{ flight['flight_number'] }}</td>
+                    <td>{{ flight['departure_airport'] }}</td>
+                    <td>{{ flight['arrival_airport'] }}</td>
+                    <td>{{ flight['departure_date'] }}</td>
+                    <td>{{ flight['departure_time']}}</td>
+                    <td>{{ flight['arrival_date'] }}</td>
+                    <td>{{ flight['arrival_time'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+
+    {% if not outbound_flights and not return_flights %}
+        <p>No flights found for the given criteria.</p>
+    {% endif %}
+</body>
+<a href="/index">Back to Home</a>
+</html>

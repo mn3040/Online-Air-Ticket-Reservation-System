@@ -1,0 +1,61 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin: 20px 0;
+}
+
+.revenue-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.revenue-box {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.revenue-box:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(-5px);
+}
+
+.revenue-box h2 {
+  color: red;
+  text-align: center;
+}
+
+.revenue-box p {
+  font-size: 24px;
+  text-align: center;
+  color: #333;
+}
+
+a {
+  display: inline-block;  /* Change to inline-block for better control */
+  margin-top: 40px;  /* Spacing from the list */
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: red;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;  /* Smooth background color transition */
+  text-align: center;  /* Ensure text is centered */
+  width: 200px;  /* Fixed width for uniform appearance */
+}
+
+a:hover {
+  background-color: darkred;  /* Darken the button on hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+}

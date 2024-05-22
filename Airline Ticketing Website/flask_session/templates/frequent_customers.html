@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Frequent Customers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='frequent_customers.css') }}">
+</head>
+<body>
+    <h1>View Frequent Customers</h1>
+    <form method="POST">
+        <label for="airline_name">Airline Name:</label>
+        <input type="text" id="airline_name" name="airline_name" required>
+
+        <label for="customer_email">Customer Email (optional):</label>
+        <input type="text" id="customer_email" name="customer_email">
+
+        <button type="submit">Search</button>
+    </form>
+
+    {% if most_frequent_customer %}
+    <h2>Most Frequent Customer</h2>
+    <p>Email: {{ most_frequent_customer['email_address'] }}</p>
+    <p>Flights Taken: {{ most_frequent_customer['flight_count'] }}</p>
+    {% endif %}
+
+    {% if customer_flights %}
+    <h2>Customer's Flights</h2>
+    <ul>
+        {% for flight in customer_flights %}
+        <li>{{ flight['departure_date'] }}: {{ flight['departure_airport'] }} to {{ flight['arrival_airport'] }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>
+
+

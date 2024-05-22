@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Flights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_future_flights.css') }}">
+</head>
+<body>
+    <h1>View Flights</h1>
+    <div class="filter-form">
+        <form action="{{ url_for('view_flights') }}" method="post">
+            <div class="form-group">
+                <label for="airline_name">Airline Name:</label>
+                <input type="text" id="airline_name" name="airline_name">
+            </div>
+            <div class="form-group">
+                <label for="start_date">Start Date:</label>
+                <input type="date" id="start_date" name="start_date">
+            </div>
+            <div class="form-group">
+                <label for="end_date">End Date:</label>
+                <input type="date" id="end_date" name="end_date">
+            </div>
+            <div class="form-group">
+                <label for="departure_airport">Departure Airport:</label>
+                <input type="text" id="departure_airport" name="departure_airport">
+            </div>
+            <div class="form-group">
+                <label for="arrival_airport">Arrival Airport:</label>
+                <input type="text" id="arrival_airport" name="arrival_airport">
+            </div>
+            <div class="button-container">
+                <button type="submit">Filter</button>
+            </div>
+        </form>
+    </div>
+    {% if flights %}
+    <div class="flights-list">
+        {% for flight in flights %}
+        <div class="flight">
+            <h3>{{ flight.flight_number }} - {{ flight.departure_date }}</h3>
+            <p>Departure: {{ flight.departure_airport }}</p>
+            <p>Arrival: {{ flight.arrival_airport }}</p>
+            <div class="customers">
+                <h3>Customers</h3>
+                <ul>
+                    {% for customer in flight_customer_details[flight.flight_number] %}
+                    <li>{{ customer.first_name }} {{ customer.last_name }} - {{ customer.email_address }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>
+
+

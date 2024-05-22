@@ -1,0 +1,109 @@
+html, body {
+  height: 100%; /* Ensure the full height for the sticky footer */
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100%; /* Minimum height to fill the viewport */
+}
+
+header {
+  background-color: #ffffff;
+  color: #b30000;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Aligns items vertically centered */
+  background-color: #b30000;
+  padding: 15px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-icon {
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+}
+
+.logout-link a {
+  color: white; /* Sets the text color to white */
+  text-decoration: none; /* Removes the underline */
+}
+
+.logout-link a:hover {
+  text-decoration: none; /* Ensures underline does not appear on hover */
+  color: white; /* Ensures color stays white on hover */
+  background-color: #8c0000; /* Optional: Changes background on hover */
+}
+
+.sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background: #b30000;
+  transition: all 0.3s ease;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 60px 0;
+}
+
+.sidebar ul li a {
+  padding: 10px 15px;
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.header-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Places the image behind all other content */
+  opacity: 0.8; /* Optionally make it slightly see-through */
+}
+
+footer {
+  background-color: #b30000;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: auto; /* Pushes the footer to the bottom of the flex container */
+}
+
+.closebtn {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}

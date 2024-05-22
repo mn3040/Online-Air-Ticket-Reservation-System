@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Airplane</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_airplane.css') }}">
+</head>
+<body>
+    <h1>Add New Airplane</h1>
+    <form action="{{ url_for('add_airplane') }}" method="post">
+        <input type="text" name="airplane_id_number" placeholder="Airplane ID Number" required>
+        <input type="text" name="airline_name" placeholder="Airline Name" required>
+        <input type="number" name="num_seats" placeholder="Number of Seats" required>
+        <input type="text" name="manufacturing_company" placeholder="Manufacturing Company" required>
+        <input type="text" name="model_number" placeholder="Model Number" required>
+        <input type="date" name="manufacturing_date" placeholder="Manufacturing Date" required>
+        <button type="submit">Add Airplane</button>
+    </form>
+
+    <h2>Existing Airplanes</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Airline Name</th>
+                <th>Seats</th>
+                <th>Manufacturer</th>
+                <th>Model Number</th>
+                <th>Manufacturing Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for airplane in airplanes %}
+            <tr>
+                <td>{{ airplane.airplane_id_number }}</td>
+                <td>{{ airplane.airline_name }}</td>
+                <td>{{ airplane.num_seats }}</td>
+                <td>{{ airplane.manufacturing_company }}</td>
+                <td>{{ airplane.model_number }}</td>
+                <td>{{ airplane.manufacturing_date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>

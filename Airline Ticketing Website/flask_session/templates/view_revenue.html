@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Revenue</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_revenue.css') }}">
+</head>
+<body>
+    
+    <h1>Revenue Earned</h1>
+    <div class="revenue-container">
+        <div class="revenue-box">
+            <h2>Last Month's Revenue</h2>
+            <p>${{ last_month_revenue }}</p>
+        </div>
+        <div class="revenue-box">
+            <h2>Last Year's Revenue</h2>
+            <p>${{ last_year_revenue}}</p>
+        </div>
+    </div>
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>

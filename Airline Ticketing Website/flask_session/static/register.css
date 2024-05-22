@@ -1,0 +1,78 @@
+/* Basic reset for margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Ensure the html and body are taking the full height of the viewport */
+    min-height: 100vh; /* Minimum height is set to 100% of the viewport height */
+    overflow-y: auto; /* Allows vertical scrolling */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Clean and simple font */
+    background-color: #f9f9f9; /* Light grey background for a soft look */
+    padding: 20px; /* Padding around the body to avoid sticking to the edges */
+    display: flex;
+    flex-direction: column; /* Stacks children elements (like forms) vertically */
+    align-items: center; /* Centers children horizontally */
+}
+
+form {
+    background: white;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px; /* Maximum width of the form */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    border-radius: 8px; /* Rounded corners for a modern look */
+    margin-top: 20px; /* Margin on top to separate from other content or navigation */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin: 20px 0; /* Adds margin above and below the title */
+}
+
+label {
+    font-weight: bold; /* Makes the label text a bit bolder */
+    margin-top: 15px; /* Spacing above each label */
+    display: block; /* Ensures that the input appears below the label */
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px; /* Small top margin for spacing from the label */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded borders for the inputs */
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px; /* Spacing above the button */
+    background-color: #007BFF; /* Bright blue for visibility and style */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+p {
+    color: #333;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px; /* Space above the paragraph for separation */
+}

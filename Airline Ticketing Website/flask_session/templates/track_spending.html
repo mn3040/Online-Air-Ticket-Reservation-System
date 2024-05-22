@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Track My Spending</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='track_spending.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <h1>Spending Overview</h1>
+    <form method="POST">
+        Start Date: <input type="date" name="start_date" value="{{ start_date }}">
+        End Date: <input type="date" name="end_date" value="{{ end_date }}">
+        <button type="submit">Update</button>
+    </form>
+    <h2>Total Spent: ${{ total_spent }}</h2>
+    <h3>Monthly Spending:</h3>
+    <table>
+        <tr>
+            <th>Month</th>
+            <th>Spent ($)</th>
+        </tr>
+        {% for spend in monthly_spending %}
+        <tr>
+            <td>{{ spend.year }}-{{ spend.month }}</td>
+            <td>${{ spend.monthly_spent }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('home') }}" class="home-button">Go to Home Page</a>
+  
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!-- templates/airports.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Airports</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='airports.css') }}">
+
+</head>
+<body>
+    <h1>Airports</h1>
+    <ul>
+        {% for airport in airports %}
+            <li>{{ airport.name }}, {{ airport.city }}, {{ airport.country }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/index">Back to Home</a>
+</body>
+</html>

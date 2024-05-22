@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Flight</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='purchase_flight.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="flights-container">
+            <h1>Available Flights</h1>
+            {% for flight in flights %}
+            <div class="flight">
+                <p>Flight Number: {{ flight.flight_number }}</p>
+                <p>Departure: {{ flight.departure_airport }} at {{ flight.departure_date }} at {{flight.departure_time}}</p>
+                <p>Arrival: {{ flight.arrival_airport }} at {{flight.arrival_date}} at {{ flight.arrival_time }}</p>
+                <p>Price: ${{ flight.base_price_of_ticket }}</p>
+            </div>
+            {% else %}
+            <p>No flights available.</p>
+            {% endfor %}
+        </div>
+
+        <div class="purchase-container">
+            <h1>Purchase Flight</h1>
+            <form action="{{ url_for('purchase_flight') }}" method="post">
+                <div class="form-group">
+                    <label for="flight_number">Flight Number:</label>
+                    <input type="text" id="flight_number" name="flight_number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="date_of_birth">Date of Birth:</label>
+                    <input type="date" id="date_of_birth" name="date_of_birth" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="card_type">Card Type:</label>
+                    <select id="card_type" name="card_type" required>
+                        <option value="Visa">Visa</option>
+                        <option value="MasterCard">MasterCard</option>
+                        <option value="American Express">American Express</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="card_number">Card Number:</label>
+                    <input type="text" id="card_number" name="card_number" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name_on_card">Name on Card:</label>
+                    <input type="text" id="name_on_card" name="name_on_card" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="expiration_date">Expiration Date:</label>
+                    <input type="date" id="expiration_date" name="expiration_date" required>
+                </div>
+                
+                <button type="submit">Purchase</button>
+            </form>
+        </div>
+        <a href="/home">Back to Home</a>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,48 @@
+.flights-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; /* White background for outer box */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow added to outer box */
+}
+
+.flight {
+    background-color: #f9f9f9; /* Light gray background for inner box */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s, transform 0.3s; /* Added transition for smoother interaction */
+}
+
+.flight:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Lift the box slightly on hover */
+}
+
+/* Stylish text within flight boxes */
+.flight p {
+    margin: 0;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+}
+
+.flight p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue header text */
+    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+}
+
+
+
+
+

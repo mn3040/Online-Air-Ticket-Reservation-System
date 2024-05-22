@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Airport</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add_airplane.css') }}">
+</head>
+<body>
+    <h1>Add New Airport</h1>
+    <form action="{{ url_for('add_airport') }}" method="post">
+        <input type="text" name="code" placeholder="Code" required>
+        <input type="text" name="name" placeholder="Airport Name" required>
+        <input type="text" name="city" placeholder="City" required>
+        <input type="text" name="country" placeholder="Country" required>
+        <input type="text" name="num_terminals" placeholder="Number of Terminals" required>
+        <input type="text" name="airport_type" placeholder="Airport Type" required>
+        <button type="submit">Add Airport</button>
+    </form>
+
+    <h2>Existing Airports</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Code</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Number of Terminals</th>
+                <th>Airport Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for airport in airports %}
+            <tr>
+                <td>{{ airport.code }}</td>
+                <td>{{ airport.name }}</td>
+                <td>{{ airport.city }}</td>
+                <td>{{ airport.country }}</td>
+                <td>{{ airport.num_terminals }}</td>
+                <td>{{ airport.airport_type }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Flight Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='change_status.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="flights-list">
+            <h2>Current Flights</h2>
+            {% for flight in flights %}
+                <div class="flight">
+                    <p><strong>Flight Number:</strong> {{ flight['flight_number'] }}</p>
+                    <p><strong>Departure Date:</strong> {{ flight['departure_date'] }}</p>
+                    <p><strong>Departure Time:</strong> {{ flight['departure_time'] }}</p>
+                    <p><strong>Status:</strong> {{ flight['status'] }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="form-container">
+            <h1>Change Flight Status</h1>
+            <form action="{{ url_for('change_status') }}" method="post">
+                <label for="flight_number">Flight Number:</label>
+                <input type="text" id="flight_number" name="flight_number" required>
+                <label for="departure_date">Departure Date:</label>
+                <input type="date" id="departure_date" name="departure_date" required>
+                <label for="departure_time">Departure Time:</label>
+                <input type="time" id="departure_time" name="departure_time" required>
+                <label for="new_status">New Status:</label>
+                <select id="new_status" name="new_status" required>
+                    <option value="On-time">On-time</option>
+                    <option value="Delayed">Delayed</option>
+                </select>
+                <button type="submit">Update Status</button>
+            </form>
+        </div>
+    </div>
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>

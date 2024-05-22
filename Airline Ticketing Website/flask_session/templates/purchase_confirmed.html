@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase Confirmed</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='purchase_confirmed.css') }}">
+</head>
+<body>
+    <h1>Flight Purchase Confirmed</h1>
+    <p>Your flight has been successfully booked.</p>
+
+    <div class="navigation-buttons">
+        <a href="{{ url_for('home') }}" class="button">Go to Home</a>
+        <a href="{{ url_for('my_flights') }}" class="button">View My Flights</a>
+    </div>
+</body>
+</html>

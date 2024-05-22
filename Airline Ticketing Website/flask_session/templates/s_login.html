@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Login | Air Ticket Reservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='s_login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h1>Staff Login</h1>
+        <form action="/s_login" method="post" id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+        <p>Not registered? <a href="/s_register">Register here</a></p>
+        <p>Forgot password? <a href="/s_reset-password">Reset here</a></p>
+        <p>Login as a Customer |<a href="/login"> Login Here</a></p>
+        <a href="/index">Back to Home</a>
+    </div>
+
+    <!-- <script src="{{ url_for('static', filename='login.js') }}"></script> -->
+</body>
+</html>
+
+
+

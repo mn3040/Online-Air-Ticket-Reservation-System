@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancel Trip</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cancel_trip.css') }}">
+</head>
+<body>
+    <h1>Cancel Your Trip</h1>
+    <div class="ticket-container">
+        {% if tickets %}
+            {% for ticket in tickets %}
+            <div class="ticket">
+                <p><strong>Ticket ID:</strong> {{ ticket['ticket_id'] }}</p>
+                <p><strong>Flight Number:</strong> {{ ticket['flight_number'] }}</p>
+                <p><strong>Departure Date:</strong> {{ ticket['departure_date'] }}</p>
+                <form action="{{ url_for('cancel_flight') }}" method="post">
+                    <input type="text" id="ticket_id" name="ticket_id" required>
+                    <button type="submit">Cancel Flight</button>
+                </form>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No active tickets found.</p>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cancel Trip</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cancel_trip.css') }}">
+</head>
+<body>
+    <h1>Cancel Your Trip</h1>
+    <div class="ticket-container">
+        <!-- {% if tickets %} -->
+            {% for ticket in tickets %}
+            <div class="ticket">
+                <p><strong>Ticket ID:</strong> {{ ticket.ticket_id }}</p>
+                <p><strong>Flight Number:</strong> {{ ticket.flight_number }}</p>
+                <p><strong>Departure Date and Time:</strong> {{ ticket.departure_date}} at {{ ticket.departure_time  }}</p>
+                <form action="{{ url_for('cancel_flight') }}" method="post">
+                    <input type="hidden" name="ticket_id" value="{{ ticket.ticket_id }}">
+                    <button type="submit">Cancel Flight</button>
+                </form>
+            </div>
+            {% endfor %}
+        <!-- {% else %}
+            <p>No active tickets found eligible for cancellation.</p>
+        {% endif %} -->
+    </div>
+</body>
+<a href="/home">Back to Home</a>
+</html>
+
+

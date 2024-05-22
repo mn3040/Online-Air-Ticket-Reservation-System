@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff; /* Blue header text */
+    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+}
+
+.ticket-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background for outer box */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow added to outer box */
+}
+
+.ticket {
+    background-color: #f9f9f9; /* Light gray background for inner box */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s; /* Added transition for smoother interaction */
+}
+
+.ticket:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+    transform: translateY(-5px); /* Lift the box slightly on hover */
+}
+
+.ticket:last-child {
+    margin-bottom: 0; /* Remove bottom margin for last ticket */
+}
+
+.ticket p {
+    margin: 5px 0;
+    color: #333; /* Dark text color */
+    font-family: Arial, sans-serif; /* Set font to Arial or sans-serif */
+}
+
+form {
+    margin-top: 10px;
+}
+
+button {
+    background-color: #007bff; /* Blue button background */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+a {
+    display: inline-block;  /* Change to inline-block for better control */
+    margin-top: 40px;  /* Spacing from the list */
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;  /* Smooth background color transition */
+    text-align: center;  /* Ensure text is centered */
+    width: 200px;  /* Fixed width for uniform appearance */
+  }
+  
+  a:hover {
+    background-color: #0056b3;  /* Darken the button on hover */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+  }

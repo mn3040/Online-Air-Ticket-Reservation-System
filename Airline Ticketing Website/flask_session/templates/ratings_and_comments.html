@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rate Past Flights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ratings_and_comments.css') }}">
+</head>
+<body>
+    <h1>Rate Your Past Flights</h1>
+    <div class="flights-container">
+        {% for flight in past_flights %}
+            <div class="flight">
+                <p><strong>Flight Number:</strong> {{ flight.flight_number }}</p>
+                <p><strong>Departure:</strong> {{ flight.departure_date }} at {{ flight.departure_time }}</p>
+                <p><strong>Airline:</strong> {{ flight.airline_name }}</p>
+                {% if flight.rating %}
+                    <p><strong>Rating:</strong> {{ flight.rating }}</p>
+                    <p><strong>Comment:</strong> {{ flight.comment }}</p>
+                {% else %}
+                    <form action="{{ url_for('rate_flight') }}" method="post">
+                        <input type="hidden" name="flight_number" value="{{ flight.flight_number }}">
+                        <input type="hidden" name="departure_date" value="{{ flight.departure_date }}">
+                        <input type="hidden" name="departure_time" value="{{ flight.departure_time }}">
+                        <input type="hidden" name="airline_name" value="{{ flight.airline_name }}">
+                        <label for="rating">Rating (1-5):</label>
+                        <input type="number" id="rating" name="rating" min="1" max="5" required>
+                        <label for="comment">Comment:</label>
+                        <textarea id="comment" name="comment" required></textarea>
+                        <button type="submit">Submit</button>
+                    </form>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('home') }}" class="home-button">Go to Home Page</a>
+
+</body>
+</html>
+
+
+

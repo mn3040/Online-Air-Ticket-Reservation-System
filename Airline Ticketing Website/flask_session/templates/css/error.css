@@ -1,0 +1,14 @@
+/* static/css/error.css */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f2dede;
+  color: #a94442;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}

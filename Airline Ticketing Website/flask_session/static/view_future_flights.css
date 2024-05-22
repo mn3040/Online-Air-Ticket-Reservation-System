@@ -1,0 +1,147 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: #d10000;
+  margin-bottom: 20px;
+}
+
+.filter-form {
+  width: 60%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter-form form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  color: #d10000;
+}
+
+input[type="date"],
+input[type="text"],
+input[type="time"],
+select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #d10000;
+  background: #fff0f0;
+}
+
+input:hover {
+  border-color: #a10000;
+}
+
+button {
+  padding: 12px 20px;
+  border-radius: 5px;
+  background-color: #d10000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px;
+  align-self: center;
+}
+
+button:hover {
+  background-color: #a10000;
+  transform: translateY(-3px);
+}
+
+.flights-list {
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.flight {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+.flight:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.customers {
+  background: #fff5f5;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.customers h3 {
+  color: #d10000;
+}
+
+.customers ul {
+  list-style: none;
+  padding: 0;
+}
+
+.customers li {
+  padding: 5px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.customers li:last-child {
+  border-bottom: none;
+}
+
+.button-container {
+  grid-column: span 2; /* Makes the container span across all columns if there are two columns */
+  display: flex;
+  justify-content: center; /* Centers the button horizontally */
+}
+
+button {
+  width: 100%; /* Adjust width as necessary, or keep it auto for content size */
+}
+
+a {
+  display: inline-block;  /* Change to inline-block for better control */
+  margin-top: 40px;  /* Spacing from the list */
+  padding: 10px 20px;
+  color: #ffffff;
+  background-color: red;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;  /* Smooth background color transition */
+  text-align: center;  /* Ensure text is centered */
+  width: 200px;  /* Fixed width for uniform appearance */
+}
+
+a:hover {
+  background-color: darkred;  /* Darken the button on hover */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);  /* Add shadow to button on hover */
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Flights</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='search_flight.css') }}">
+</head>
+<body>
+    <h1>Search for Flights</h1>
+    <form action="/search_flights" method="post">
+        <label for="departure_airport">Departure Airport:</label>
+        <input type="text" id="departure_airport" name="departure_airport" required>
+
+        <label for="arrival_airport">Arrival Airport:</label>
+        <input type="text" id="arrival_airport" name="arrival_airport" required>
+
+        <label for="departure_date">Departure Date:</label>
+        <input type="date" id="departure_date" name="departure_date" required>
+
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Air Ticket Reservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Air Ticket Reservation System</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/airlines">View Airlines</a></li>
+            <li><a href="/airports">View Airports</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Search for Flights</h2>
+        <form action="/flights_results" method="post">
+            <div class="radio-group">
+                <label for="flight_type_one_way">Flight Type:</label>
+                <div>
+                    <input type="radio" id="flight_type_one_way" name="flight_type" value="one_way" checked> One Way
+                </div>
+                <div>
+                    <input type="radio" id="flight_type_round_trip" name="flight_type" value="round_trip"> Round Trip
+                </div>
+            </div>
+
+            <label for="departure_airport">Departure Airport:</label>
+            <input type="text" id="departure_airport" name="departure_airport" placeholder="Source City/Airport Name" required>
+        
+            <label for="arrival_airport">Arrival Airport:</label>
+            <input type="text" id="arrival_airport" name="arrival_airport" placeholder="Destination City/Airport Name" required>
+        
+            <label for="departure_date">Departure Date:</label>
+            <input type="date" id="departure_date" name="departure_date" required>
+        
+            <label for="return_date" class="hidden">Return Date:</label>
+            <input type="date" id="return_date" name="return_date" class="hidden">
+        
+            <button type="submit">Search Flights</button>
+        </form>
+    </section>
+    
+    <section>
+        <h2>Check Flight Status</h2>
+        <form action="/status_results" method="post">
+            <input type="text" name="airline_name" placeholder="Airline Name" required>
+            <input type="text" name="flight_number" placeholder="Flight Number" required>
+            <input type="date" name="departure_date" placeholder="Date" required>
+            <button type="submit">Check Status</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Air Ticket Reservation System. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            function updateReturnDateVisibility() {
+                var isRoundTrip = document.getElementById('flight_type_round_trip').checked;
+                var returnDateLabel = document.querySelector('label[for="return_date"]');
+                var returnDateInput = document.getElementById('return_date');
+                if (isRoundTrip) {
+                    returnDateLabel.classList.remove('hidden');
+                    returnDateInput.classList.remove('hidden');
+                } else {
+                    returnDateLabel.classList.add('hidden');
+                    returnDateInput.classList.add('hidden');
+                }
+            }
+        
+            // Attach event listeners to radio buttons
+            document.getElementById('flight_type_one_way').addEventListener('click', updateReturnDateVisibility);
+            document.getElementById('flight_type_round_trip').addEventListener('click', updateReturnDateVisibility);
+        
+            // Initial visibility update on page load
+            updateReturnDateVisibility();
+        });
+    </script>
+</body>
+</html>

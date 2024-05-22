@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='status_results.css') }}">
+</head>
+<body>
+    <h1>Status Results</h1>
+    {% if flights %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Flight Number</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                <tr>
+                    <td>{{ flight['flight_number'] }}</td>
+                    <td>{{ flight['status'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No flights found for the given criteria.</p>
+    {% endif %}
+</body>
+</html>

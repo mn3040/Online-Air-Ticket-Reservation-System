@@ -1,0 +1,58 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  background: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Increased shadow depth */
+  width: 350px; /* Increased width for better spacing */
+}
+
+.login-container h1 {
+  text-align: center;
+  color: #b30000; /* Red header text */
+  margin-bottom: 20px; /* Added margin for better spacing */
+}
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+  padding: 12px; /* Increased padding for better touch target */
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+input[type="submit"] {
+  background-color: #b30000; /* Red button background */
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+input[type="submit"]:hover {
+  background-color: #8c0000; /* Darker red on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+a {
+  color: #b30000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #8c0000; /* Darker red on hover */
+}
+

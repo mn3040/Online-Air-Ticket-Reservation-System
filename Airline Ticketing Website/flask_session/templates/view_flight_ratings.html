@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Flight Ratings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='view_flight_ratings.css') }}">
+</head>
+<body>
+    <h1>Flight Ratings and Comments</h1>
+    <div class="ratings-container">
+        {% for flight in flights %}
+            <div class="flight">
+                <h2>Flight Number: {{ flight.flight_number }}</h2>
+                <p>Average Rating: {{ flight.average_rating | round(2) }} ({{ flight.total_ratings }} ratings)</p>
+                <details>
+                    <summary>View Ratings and Comments</summary>
+                    <ul>
+                        {% for detail in detailed_ratings[flight.flight_number] %}
+                            <li>
+                                <strong>Rating:</strong> {{ detail.rating }} - <strong>Comment:</strong> {{ detail.comment }} - <em>by {{ detail.email_address }}</em>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </details>
+            </div>
+        {% endfor %}
+    </div>
+    <a href="{{ url_for('s_home') }}" class="home-button">Go to Home Page</a>
+</body>
+</html>
+

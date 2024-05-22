@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Air Ticket Reservation System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='s_home.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Air Ticket Reservation System</h1>
+    </header>
+    <nav id="navbar">
+        <div class="menu-icon" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger Icon -->
+        </div>
+        <div class="sidebar" id="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <ul>
+                <li><a href="/add_airplane">Add Airplane</a></li>
+                <li><a href="/add_airport">Add Airport</a></li>
+                <li><a href="/view_flight_ratings">View Flight Ratings</a></li>
+                <li><a href="/change_status">Change Flight Status</a></li>
+                <li><a href="/create_new_flights">Create New Flight</a></li>
+                <li><a href="/view_future_flights">View Flights</a></li>
+                <li><a href="/view_revenue">View Revenue</a></li>
+                <li><a href="/frequent_customers">Frequent Customers</a></li>
+                <li><a href="/schedule_maintenance">Schedule Maintenance</a></li>
+            </ul>
+        </div>
+        <div class="logout-link">
+            <a href="/s_logout">Log Out</a>
+        </div>
+    </nav>
+    <img src="{{ url_for('static', filename='staff_airplane.png') }}" alt="Staff Airplane" class="header-image">
+    <footer>
+        <p>© 2024 Air Ticket Reservation System. All rights reserved.</p>
+    </footer>
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+        }
+
+        function closeNav() {
+            document.getElementById('sidebar').classList.remove('active');
+        }
+    </script>
+</body>
+</html>
+

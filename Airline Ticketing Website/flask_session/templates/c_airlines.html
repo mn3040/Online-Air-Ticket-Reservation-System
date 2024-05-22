@@ -1,0 +1,20 @@
+<!-- templates/airlines.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Airlines</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='airlines.css') }}">
+
+</head>
+<body>
+    <h1>Airlines</h1>
+    <ul>
+        {% for airline in airlines %}
+            <li>{{ airline.airline_name }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/home">Back to Home</a>
+</body>
+</html>
+

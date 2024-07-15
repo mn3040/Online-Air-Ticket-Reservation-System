@@ -30,27 +30,6 @@ This project is an online air ticket reservation system developed as part of the
 
 The database schema was designed and normalized based on an Entity-Relationship (ER) diagram to support complex queries and ensure data integrity. It includes tables for customers, airline staff, flights, tickets, airplanes, and airports.
 
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/your-repo-link
-    ```
-
-2. Navigate to the project directory:
-    ```bash
-    cd your-repo-link
-    ```
-
-3. Set up the database:
-    - Import the SQL schema from `database/schema.sql` into your MySQL database.
-
-4. Configure the database connection:
-    - Update the database configuration in `config/database.php` with your MySQL credentials.
-
-5. Start the server:
-    - Use a local server like XAMPP or WAMP to run the PHP application.
-
 ## Usage
 
 - **Customer Operations:**
